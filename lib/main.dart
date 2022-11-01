@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:grupp_5/components/providers/provider.dart';
 import 'package:grupp_5/views/intro_view/intro_view.dart';
+import 'package:grupp_5/views/login_register_view/home_page.dart';
 import 'package:grupp_5/views/login_register_view/login_register_view.dart';
 import 'package:grupp_5/views/login_register_view/widget_tree.dart';
 import 'package:grupp_5/views/recipe_view/recipe_saved_view.dart';
@@ -34,6 +35,7 @@ Future<void> main() async {
           introViewRoute: (context) => const IntroView(),
           recipeSavedViewRoute: (context) => const RecipeSavedView(),
           loginRegisterViewRoute: (context) => LoginRegisterView(),
+          homePageRoute: (context) => HomePage(),
           widgetTreeRoute: (context) => const WidgetTree(),
         },
       ),

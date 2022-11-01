@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grupp_5/views/login_register_view/auth.dart';
 import 'package:grupp_5/views/login_register_view/home_page.dart';
 import 'package:grupp_5/views/login_register_view/login_register_view.dart';
+import 'package:grupp_5/views/scramble_view/scramble_view.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({Key? key}) : super(key: key);
