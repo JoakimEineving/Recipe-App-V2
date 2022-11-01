@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:grupp_5/components/providers/provider.dart';
 import 'package:grupp_5/views/intro_view/intro_view.dart';
+import 'package:grupp_5/views/login_register_view/login_register_view.dart';
+import 'package:grupp_5/views/login_register_view/widget_tree.dart';
 import 'package:grupp_5/views/recipe_view/recipe_saved_view.dart';
 import 'package:grupp_5/views/save_view/save_view.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +14,9 @@ import 'views/scramble_view/scramble_view.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     ChangeNotifierProvider(
       create: (context) => RecipeProvider(),
@@ -21,7 +25,7 @@ void main() {
           textTheme: GoogleFonts.montserratTextTheme(),
         ),
         debugShowCheckedModeBanner: false,
-        home: const IntroView(),
+        home: const WidgetTree(),
         routes: {
           scrambleViewRoute: (context) => const ScrambleView(),
           filterViewRoute: (context) => const FilterView(),
@@ -29,6 +33,8 @@ void main() {
           saveViewRoute: (context) => const SaveView(),
           introViewRoute: (context) => const IntroView(),
           recipeSavedViewRoute: (context) => const RecipeSavedView(),
+          loginRegisterViewRoute: (context) => LoginRegisterView(),
+          widgetTreeRoute: (context) => const WidgetTree(),
         },
       ),
     ),

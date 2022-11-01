@@ -41,6 +41,9 @@ dependencies:
   animated_text_kit: 
   shared_preferences: ^2.0.15
   appinio_swiper:
+  firebase_auth:
+  firebase_core:
+
 
 
 
