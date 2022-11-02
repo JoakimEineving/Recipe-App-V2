@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grupp_5/views/intro_view/intro_view.dart';
 import 'package:grupp_5/views/login_register_view/auth.dart';
 import 'package:grupp_5/views/login_register_view/home_page.dart';
 import 'package:grupp_5/views/login_register_view/login_register_view.dart';
@@ -18,7 +19,7 @@ class _WidgetTreeState extends State<WidgetTree> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return HomePage();
+          return const IntroView();
         } else {
           return LoginRegisterView();
         }

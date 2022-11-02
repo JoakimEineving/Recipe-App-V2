@@ -91,6 +91,7 @@ flutter:
       - assets/empty_doge.png
       - assets/intro_images/
       - assets/loading.json
+      - assets/foodado_logo.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

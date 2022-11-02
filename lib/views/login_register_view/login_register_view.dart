@@ -39,24 +39,55 @@ class _LoginRegisterViewState extends State<LoginRegisterView> {
     }
   }
 
-  Widget _title() {
-    return const Text('Firebase Auth');
-  }
-
-  Widget _entryField(
-    String title,
-    TextEditingController controller,
-  ) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        labelText: title,
-      ),
-    );
-  }
-
   Widget _errorMessage() {
     return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //image
+                Image.asset(
+                  'assets/foodado_logo.png',
+                  height: 300,
+                  width: 300,
+                ),
+                const SizedBox(height: 50),
+                Text(
+                  "Hello Again!",
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 52,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Welcome back, you've been missed!",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                const SizedBox(height: 50),
+                _loginField(),
+                const SizedBox(height: 10),
+                _passwordField(),
+                const SizedBox(height: 10),
+                _errorMessage(),
+                const SizedBox(height: 10),
+                _submitButton(),
+                _loginOrRegisterButton(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _submitButton() {
@@ -82,89 +113,49 @@ class _LoginRegisterViewState extends State<LoginRegisterView> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[300],
-      body: Center(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                //image
-                Image.asset(
-                  'assets/empty_doge.png',
-                  height: 200,
-                  width: 200,
-                ),
-                const SizedBox(height: 50),
-                Text(
-                  "Hello Again!",
-                  style: GoogleFonts.bebasNeue(
-                    fontSize: 52,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Welcome back, you've been missed!",
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-                const SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        controller: _emailController,
-                        enableSuggestions: false,
-                        autocorrect: false,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: const InputDecoration(
-                          hintText: 'Email',
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        controller: _passwordController,
-                        obscureText: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
-                        decoration: const InputDecoration(
-                          hintText: 'Password',
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                // TextField(
-                const SizedBox(height: 10),
-                _errorMessage(),
-                const SizedBox(height: 10),
-                _submitButton(),
-                _loginOrRegisterButton(),
-              ],
+  Widget _loginField() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: TextField(
+            controller: _emailController,
+            enableSuggestions: false,
+            autocorrect: false,
+            keyboardType: TextInputType.emailAddress,
+            decoration: const InputDecoration(
+              hintText: 'Email',
+              border: InputBorder.none,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _passwordField() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: TextField(
+            controller: _passwordController,
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+            decoration: const InputDecoration(
+              hintText: 'Password',
+              border: InputBorder.none,
             ),
           ),
         ),
@@ -172,20 +163,3 @@ class _LoginRegisterViewState extends State<LoginRegisterView> {
     );
   }
 }
-
-      // body: Container(
-      //   height: double.infinity,
-      //   width: double.infinity,
-      //   padding: const EdgeInsets.all(20),
-      //   child: Column(
-      //     crossAxisAlignment: CrossAxisAlignment.center,
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       _entryField('email', _emailController),
-      //       _entryField('password', _passwordController),
-      //       _errorMessage(),
-      //       _submitButton(),
-      //       _loginOrRegisterButton(),
-      //     ],
-      //   ),
-      // ),
