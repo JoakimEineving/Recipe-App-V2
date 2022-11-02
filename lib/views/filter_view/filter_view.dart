@@ -186,6 +186,7 @@ class _FilterViewState extends State<FilterView> {
       padding: const EdgeInsets.all(8.0),
       child: TextField(
         controller: _controller,
+        autocorrect: false,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
