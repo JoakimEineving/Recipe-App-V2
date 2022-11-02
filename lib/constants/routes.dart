@@ -6,3 +6,6 @@ const devViewRoute = '/dev_view';
 const saveViewRoute = '/save_view';
 const introViewRoute = '/intro_view';
 const recipeSavedViewRoute = '/recipe_saved_view';
+const loginRegisterViewRoute = '/login_register_view';
+const widgetTreeRoute = '/widget_tree';
+const homePageRoute = '/home_page';

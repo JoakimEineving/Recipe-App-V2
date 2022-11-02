@@ -25,9 +25,8 @@ class _FilterViewState extends State<FilterView> {
 
   @override
   void initState() {
-    super.initState();
-    delay();
     _populateFilter();
+    super.initState();
   }
 
   Future delay() async {
@@ -58,6 +57,7 @@ class _FilterViewState extends State<FilterView> {
   }
 
   void _populateFilter() async {
+    isLoading = true;
     final filterSettings = await _preferencesService.getSettings();
     setState(
       () {
@@ -66,6 +66,7 @@ class _FilterViewState extends State<FilterView> {
         maxReadyTime = filterSettings.maxReadyTime;
         diet = filterSettings.selectedDiet;
         type = filterSettings.selectedType;
+        isLoading = false;
       },
     );
   }
@@ -185,6 +186,7 @@ class _FilterViewState extends State<FilterView> {
       padding: const EdgeInsets.all(8.0),
       child: TextField(
         controller: _controller,
+        autocorrect: false,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -344,14 +346,17 @@ class _FilterViewState extends State<FilterView> {
               ),
             ),
             onPressed: () {
-              recipe.minCalories = minCalories.round().toString();
-              recipe.maxCalories = maxCalories.round().toString();
-              recipe.maxReadyTime = maxReadyTime.round().toString();
-              recipe.setRecipeQuery(_controller.text);
-              recipe.setDiet(recipe.diet);
-              recipe.fetchRecipe();
-              Navigator.of(context).pushNamed(scrambleViewRoute);
-              _saveSettings();
+              recipe.clearRecipes();
+              setState(() {
+                recipe.minCalories = minCalories.round().toString();
+                recipe.maxCalories = maxCalories.round().toString();
+                recipe.maxReadyTime = maxReadyTime.round().toString();
+                recipe.setRecipeQuery(_controller.text);
+                recipe.setDiet(recipe.diet);
+                recipe.fetchRecipe();
+                Navigator.of(context).pushNamed(scrambleViewRoute);
+                _saveSettings();
+              });
             },
             child: const Text(
               'Apply Filter',

@@ -26,18 +26,18 @@ class _ScrambleViewState extends State<ScrambleView> {
     delay();
   }
 
-  //future for loading
   Future delay() async {
     try {
-      setState(() {
-        isLoading = true;
-      });
+      isLoading = true;
       await Provider.of<RecipeProvider>(context, listen: false).fetchRecipe();
       setState(() {
         isLoading = false;
       });
     } catch (e) {
-      print(e);
+      setState(() {
+        isLoading = false;
+        customSnackbar(context, 'Error: $e');
+      });
     }
   }
 
@@ -72,7 +72,6 @@ class _ScrambleViewState extends State<ScrambleView> {
             color: Colors.black,
           ),
           onPressed: () {
-            Provider.of<RecipeProvider>(context, listen: false).clearRecipes();
             Navigator.of(context).pushNamed(filterViewRoute);
           },
         ),
@@ -210,11 +209,11 @@ class _ScrambleViewState extends State<ScrambleView> {
   Widget swipeCard() {
     return Consumer<RecipeProvider>(
       builder: (context, recipe, child) {
-        if (recipe.filterRecipe == null || recipe.recipes.isEmpty) {
+        if (recipe.recipes.isEmpty) {
           return noRecipesFound();
         } else {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.60,
+            height: MediaQuery.of(context).size.height * 0.65,
             width: MediaQuery.of(context).size.width * 0.9,
             child: AppinioSwiper(
               controller: swiperController,

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "790561525661",
+    "project_id": "foodado-df140",
+    "storage_bucket": "foodado-df140.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790561525661:android:e2facb260f9cca917ee974",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790561525661-kfnvrmpgtpjctkop95tgkphvsr47vip9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbkwus5owoltHw76DK1ZaILrJXWFVilU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790561525661-kfnvrmpgtpjctkop95tgkphvsr47vip9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
