@@ -23,12 +23,6 @@ class _SaveViewState extends State<SaveView> {
     refreshRecipes();
   }
 
-  @override
-  void dispose() {
-    // RecipeDatabase.instance.close();
-    super.dispose();
-  }
-
   Future refreshRecipes() async {
     setState(() => isLoading = true);
     this.recipeDb = await RecipeDatabase.instance.readAllRecipes();

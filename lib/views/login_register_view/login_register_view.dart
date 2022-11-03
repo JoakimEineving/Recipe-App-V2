@@ -40,7 +40,8 @@ class _LoginRegisterViewState extends State<LoginRegisterView> {
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage',
+        textAlign: TextAlign.center);
   }
 
   @override
@@ -53,7 +54,6 @@ class _LoginRegisterViewState extends State<LoginRegisterView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //image
                 Image.asset(
                   'assets/foodado_logo.png',
                   height: 300,
