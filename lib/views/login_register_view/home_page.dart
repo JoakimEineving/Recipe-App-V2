@@ -1,4 +1,5 @@
 //firebase
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grupp_5/components/db/recipe_database.dart';
@@ -7,9 +8,10 @@ import 'package:grupp_5/components/providers/provider.dart';
 import 'package:grupp_5/constants/constants.dart';
 import 'package:grupp_5/constants/routes.dart';
 import 'package:grupp_5/views/login_register_view/auth.dart';
+import 'package:grupp_5/views/login_register_view/bottom_nav.dart';
 import 'package:provider/provider.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-//stateful
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -18,6 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var currentIndex = 0;
   bool isLoading = false;
   late List<RecipeDb> recipeDb;
   final User? user = Auth().currentUser;
@@ -50,12 +53,13 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 50),
               _userUid(),
               _signOutButton(),
-              _categoriesGridView(),
+              // _categoriesGridView(),
               _savedRecipesGridView(),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 
@@ -107,7 +111,6 @@ class _HomePageState extends State<HomePage> {
     ]);
   }
 
-  //categories gridview scroll
   Widget _categoriesGridView() {
     return Consumer<RecipeProvider>(
       builder: (context, recipeProvider, child) {

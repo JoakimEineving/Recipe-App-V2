@@ -43,6 +43,7 @@ dependencies:
   appinio_swiper:
   firebase_auth:
   firebase_core:
+  salomon_bottom_bar: 
 
 
 

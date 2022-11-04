@@ -3,11 +3,13 @@ import 'package:grupp_5/components/db/recipe_database.dart';
 import 'package:grupp_5/components/models/recipe_db_model.dart';
 import 'package:grupp_5/components/models/recipe_model.dart';
 import 'package:grupp_5/components/providers/provider.dart';
+import 'package:grupp_5/views/login_register_view/bottom_nav.dart';
 import 'package:provider/provider.dart';
 import 'package:grupp_5/constants/constants.dart';
 import 'package:grupp_5/constants/routes.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:appinio_swiper/appinio_swiper.dart';
+import 'package:grupp_5/views/login_register_view/home_page.dart';
 
 class ScrambleView extends StatefulWidget {
   const ScrambleView({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class ScrambleView extends StatefulWidget {
 }
 
 class _ScrambleViewState extends State<ScrambleView> {
+  var currentIndex = 1;
   bool isLoading = false;
   AppinioSwiperController swiperController = AppinioSwiperController();
 
@@ -77,6 +80,7 @@ class _ScrambleViewState extends State<ScrambleView> {
         ),
       ),
       body: isLoading ? Center(child: loadingAnimation) : buildBody(),
+      bottomNavigationBar: BottomNav(),
     );
   }
 
