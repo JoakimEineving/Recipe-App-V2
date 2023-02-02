@@ -3,7 +3,7 @@ Foodado Recipe App
 </h1>
 
 <p align="center">
-The paradox of choice in our everyday life can cause stress and anxiety. Are you tired of figuring out what to eat after a long day? Foodado will speed up decision making, free up time and energy so you can spend more time on important decisions in your life. Use the filter function to find recipes from your requirements, save recipes for later if you like. 
+This recipe application was developed using Flutter, utilizing the Spoonacular API to retrieve recipes based on user inputs. The application features an SQL database for recipe storage and utilizes SharedPreferences for saving user settings, both are being saved in the device's local storage. State management is handled through the use of Provider, and user authentication is currently being developed through Firebase integration. Featured on <a href="https://flutterawesome.com/a-simple-food-recipe-application/">FlutterAwesome</a> 2022. 
 </p>
 
 ![](https://github.com/JoakimEineving/Foodado-V2/blob/main/assets/readme_assets/Foodado.gif)
@@ -16,7 +16,7 @@ The paradox of choice in our everyday life can cause stress and anxiety. Are you
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/JoakimEineving/Foodado-V2.git
+https://github.com/JoakimEineving/Recipe-App-V2.git
 ```
 
 **Step 2:**

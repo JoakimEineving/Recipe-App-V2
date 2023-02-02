@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grupp_5/components/providers/provider.dart';
 import 'package:grupp_5/views/login_register_view/home_page.dart';
+import 'package:provider/provider.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:grupp_5/constants/routes.dart';
 
@@ -13,42 +15,48 @@ class _BottomNavState extends State<BottomNav> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 75,
-      child: SalomonBottomBar(
+    return Consumer<RecipeProvider>(
+      builder: (context, provider, child) => SalomonBottomBar(
         currentIndex: currentIndex,
-        onTap: (i) => setState(() {
-          print(i);
-          currentIndex = i;
-          if (currentIndex == 0) {
-            Navigator.of(context).pushNamed(homePageRoute);
-          } else if (currentIndex == 1) {
-            Navigator.of(context).pushNamed(scrambleViewRoute);
-          } else if (currentIndex == 2) {
-            Navigator.of(context).pushNamed(scrambleViewRoute);
+        onTap: (index) => setState(() {
+          currentIndex = index;
+          if (index == 0) {
+            Navigator.pushNamed(context, scrambleViewRoute);
+          } else if (index == 1) {
+            Navigator.pushNamed(context, scrambleViewRoute);
+          } else if (index == 2) {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                scrambleViewRoute, (Route<dynamic> route) => false);
           }
         }),
         items: [
-          SalomonBottomBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Example"),
-            selectedColor: Colors.purple,
-          ),
-          SalomonBottomBarItem(
-            icon: Icon(Icons.favorite_border),
-            title: Text("Example"),
-            selectedColor: Colors.pink,
-          ),
-          SalomonBottomBarItem(
-            icon: Icon(Icons.search),
-            title: Text("Example"),
-            selectedColor: Colors.orange,
-          ),
-          SalomonBottomBarItem(
-            icon: Icon(Icons.person),
-            title: Text("Example"),
-            selectedColor: Colors.teal,
-          ),
+          /// Home
+          // SalomonBottomBarItem(
+          //   icon: const Icon(Icons.home),
+          //   title: const Text('Home'),
+          //   selectedColor: Colors.purple,
+          // ),
+
+          // /// Likes
+          // SalomonBottomBarItem(
+          //   icon: const Icon(Icons.favorite_border),
+          //   title: const Text('Likes'),
+          //   selectedColor: Colors.pink,
+          // ),
+
+          // /// Search
+          // SalomonBottomBarItem(
+          //   icon: const Icon(Icons.search),
+          //   title: const Text('Search'),
+          //   selectedColor: Colors.orange,
+          // ),
+
+          // /// Profile
+          // SalomonBottomBarItem(
+          //   icon: const Icon(Icons.person_outline),
+          //   title: const Text('Profile'),
+          //   selectedColor: Colors.teal,
+          // ),
         ],
       ),
     );

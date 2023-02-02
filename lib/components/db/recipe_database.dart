@@ -3,8 +3,6 @@ import 'package:grupp_5/components/models/recipe_db_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-//https://www.youtube.com/watch?v=UpKrhZ0Hppk
-
 class RecipeDatabase {
   static final RecipeDatabase instance = RecipeDatabase._init();
 

@@ -53,13 +53,13 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 50),
               _userUid(),
               _signOutButton(),
-              // _categoriesGridView(),
+              _categoriesGridView(),
               _savedRecipesGridView(),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNav(),
     );
   }
 
