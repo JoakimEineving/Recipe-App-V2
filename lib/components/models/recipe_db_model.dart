@@ -1,4 +1,4 @@
-final String tableRecipe = 'savedRecipes';
+const String tableRecipe = 'savedRecipes';
 
 class RecipeFields {
   static final List<String> values = [id, title, image];

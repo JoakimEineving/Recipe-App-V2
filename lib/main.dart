@@ -12,7 +12,7 @@ import '/constants/routes.dart';
 import 'views/filter_view/filter_view.dart';
 import 'views/recipe_view/recipe_view.dart';
 import 'views/scramble_view/scramble_view.dart';
-
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Future<void> main() async {
@@ -26,7 +26,7 @@ Future<void> main() async {
           textTheme: GoogleFonts.montserratTextTheme(),
         ),
         debugShowCheckedModeBanner: false,
-        home: const WidgetTree(),
+        home: const IntroView(),
         routes: {
           scrambleViewRoute: (context) => const ScrambleView(),
           filterViewRoute: (context) => const FilterView(),
@@ -35,8 +35,8 @@ Future<void> main() async {
           introViewRoute: (context) => const IntroView(),
           recipeSavedViewRoute: (context) => const RecipeSavedView(),
           loginRegisterViewRoute: (context) => LoginRegisterView(),
-          homePageRoute: (context) => HomePage(),
-          widgetTreeRoute: (context) => const WidgetTree(),
+          // homePageRoute: (context) => HomePage(),
+          // widgetTreeRoute: (context) => const WidgetTree(),
         },
       ),
     ),
