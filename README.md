@@ -8,8 +8,7 @@ This recipe application was developed using Flutter, utilizing the Spoonacular A
 
 ![](https://github.com/JoakimEineving/Foodado-V2/blob/main/assets/readme_assets/Foodado.gif)
 
-
-## How to Use 
+## How to Use
 
 **Step 1:**
 
@@ -21,10 +20,10 @@ https://github.com/JoakimEineving/Recipe-App-V2.git
 
 **Step 2:**
 
-Go to project root and execute the following command in console to get the required dependencies: 
+Go to project root and execute the following command in console to get the required dependencies:
 
 ```
-flutter pub get 
+flutter pub get
 ```
 
 **Step 3:**
@@ -37,12 +36,12 @@ String apiKey = "YOUR_API_KEY";
 
 ### Packages & Tools Used
 
-* [SQFlite](https://pub.dev/packages/sqflite) (Storing recipes locally)
-* [Provider](https://pub.dev/packages/provider) (State Management)
-* [Path Provider](https://pub.dev/packages/path_provider)
-* [Http](https://pub.dev/packages/http)
-* [Introduction Screen](https://pub.dev/packages/introduction_screen)
-* [Flutter_Html](https://pub.dev/packages/flutter_html)
-* [Lottie](https://pub.dev/packages/lottie)
-* [Appinio Swiper](https://pub.dev/packages/appinio_swiper)
-* [Google Fonts](https://pub.dev/packages/google_fonts)
+- [SQFlite](https://pub.dev/packages/sqflite) (Storing recipes locally)
+- [Provider](https://pub.dev/packages/provider) (State Management)
+- [Path Provider](https://pub.dev/packages/path_provider)
+- [Http](https://pub.dev/packages/http)
+- [Introduction Screen](https://pub.dev/packages/introduction_screen)
+- [Flutter_Html](https://pub.dev/packages/flutter_html)
+- [Lottie](https://pub.dev/packages/lottie)
+- [Appinio Swiper](https://pub.dev/packages/appinio_swiper)
+- [Google Fonts](https://pub.dev/packages/google_fonts)
